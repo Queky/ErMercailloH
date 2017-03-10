@@ -9,7 +9,7 @@
         <item
             android:id="@+id/Usuario"
             android:icon="@drawable/ic_menu_gallery"
-            android:title=""/>
+            android:title="Prueba"/>
         <item
             android:id="@+id/subir_articulo"
             android:icon="@drawable/ic_menu_share"

@@ -9,7 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import retrofit.Call;
+import retrofit.Callback;
+import retrofit.GsonConverterFactory;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 
 /**
@@ -20,7 +25,7 @@ public class pestaniaLogin extends Fragment {
     EditText txtcontrasenia;
     Button b1;
     Usuario u1;
-
+    String contrasenia1;
     public pestaniaLogin() {
         // Required empty public constructor
     }
@@ -47,7 +52,39 @@ public class pestaniaLogin extends Fragment {
         u1 = Usuario.getInstance();
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(u1.email.equals(txtemail.getText().toString())&&u1.contraseña.equals(txtcontrasenia.getText().toString())){
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("http://10.0.2.2:8084/erMercailloHSW/rest/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+
+                Servicio service = retrofit.create(Servicio.class);
+
+                Call<Usuario> call = service.getUsuario(1);
+
+                call.enqueue(new Callback<Usuario>() {
+                    @Override
+                    public void onResponse(Response<Usuario> response, Retrofit retrofit) {
+
+                        try {
+                            u1.setAtri(response.body().getIdUsusario(),response.body().getNombre(),
+                                    response.body().getApellido(),response.body().getEmail(),response.body().getPassword());
+
+
+
+                        } catch (Exception e) {
+                            //.d("onResponse", "There is an error");
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+
+                        // Log.d("onFailure", t.toString());
+                    }
+                });
+                if(txtcontrasenia.getText().toString().equals(u1.getPassword())){
                     //Creamos el Intent
                     u1.estaLogueado=true;
                     Intent i=new Intent(getActivity(),MainActivity.class);

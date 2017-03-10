@@ -1,13 +1,16 @@
 package com.example.eneko.ermercailloh;
 
+
 /**
  * Created by Eneko on 20/02/2017.
  */
-public class Usuario {
 
+public class Usuario {
+    public int idUsusario;
+    public String apellido;
     public String nombre;
     public String email;
-    public String contraseña;
+    public String password;
     public boolean estaLogueado;
     private static Usuario ourInstance = new Usuario();
 
@@ -16,9 +19,63 @@ public class Usuario {
     }
 
     private Usuario() {
-        email="eko@gmail.com";
-        contraseña= "1234";
-        estaLogueado = false;
-        nombre = "Eneko Ortega Cueva";
+    }
+
+    public int getIdUsusario() {
+        return idUsusario;
+    }
+
+    public void setIdUsusario(int idUsusario) {
+        this.idUsusario = idUsusario;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public boolean isEstaLogueado() {
+        return estaLogueado;
+    }
+
+    public void setEstaLogueado(boolean estaLogueado) {
+        this.estaLogueado = estaLogueado;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void  setAtri(int idUsusario, String nombre, String apellido, String email, String password) {
+        this.idUsusario = idUsusario;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.password = password;
+
+
+    }
+
+    public String getPassword() {
+        return password;
     }
 }
