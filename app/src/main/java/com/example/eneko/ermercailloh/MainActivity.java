@@ -46,9 +46,16 @@ public class MainActivity extends AppCompatActivity
         Usuario u1 = Usuario.getInstance();
         if(!u1.estaLogueado){
             navigationView.getMenu().findItem(R.id.Usuario).setVisible(false);
-            navigationView.getMenu().findItem(R.id.menu_articulos).setVisible(false);
-        }else
+            navigationView.getMenu().findItem(R.id.subir_articulo).setVisible(false);
+            navigationView.getMenu().findItem(R.id.mis_articulos).setVisible(false);
+            navigationView.getMenu().findItem(R.id.mis_pujas).setVisible(false);
+        }else {
             navigationView.getMenu().findItem(R.id.login).setVisible(false);
+            //Recuperamos la información pasada en el intent
+            Bundle bundle = this.getIntent().getExtras();
+            navigationView.getMenu().findItem(R.id.Usuario).setTitle(bundle.getString("NOMBRE"));
+
+        }
 
 
     }
@@ -97,6 +104,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.login) {
+
             fragment = new pestaniaLogin();
             fragmentTransaction =true;
 

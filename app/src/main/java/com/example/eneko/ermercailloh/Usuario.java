@@ -4,6 +4,8 @@ package com.example.eneko.ermercailloh;
  * Created by Eneko on 20/02/2017.
  */
 public class Usuario {
+
+    public String nombre;
     public String email;
     public String contraseña;
     public boolean estaLogueado;
@@ -17,5 +19,6 @@ public class Usuario {
         email="eko@gmail.com";
         contraseña= "1234";
         estaLogueado = false;
+        nombre = "Eneko Ortega Cueva";
     }
 }

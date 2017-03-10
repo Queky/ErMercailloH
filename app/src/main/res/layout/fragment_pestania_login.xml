@@ -10,12 +10,14 @@
         android:text="Por favor introduce los siguientes datos para loguearte:"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/infologin" />
+        android:id="@+id/infologin"
+
+        android:layout_marginTop="65dp"/>
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="75dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -35,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:ems="10"
-                android:id="@+id/editText" />
+                android:id="@+id/editTextemail" />
         </TableRow>
 
         <TableRow
@@ -54,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:id="@+id/editText2" />
+                android:id="@+id/editTextpaswword" />
         </TableRow>
 
         <TableRow
@@ -68,7 +70,7 @@
                 android:id="@+id/button"
                 style="@style/Widget.AppCompat.Button.Small"
                 android:elevation="14dp"
-                android:layout_marginLeft="150dp"/>
+                android:layout_marginLeft="15dp"/>
         </TableRow>
     </TableLayout>
 </FrameLayout>
