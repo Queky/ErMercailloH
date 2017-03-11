@@ -1,5 +1,7 @@
 package com.example.eneko.ermercailloh;
 
+import android.text.method.DateTimeKeyListener;
+
 import java.util.Date;
 
 /**
@@ -14,7 +16,36 @@ public class Producto {
     private float pujamaxima;
     private int propietario;
     private int abierto;
-    private Date fechaApertura
+    private Date dInicio;
+    private Date dFin;
+
+    public Producto(int idproducto, String nombre, String descripcion, int idmaxpujador, float pujamaxima, int propietario, int abierto, Date dInicio, Date dFin) {
+        this.idproducto = idproducto;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.idmaxpujador = idmaxpujador;
+        this.pujamaxima = pujamaxima;
+        this.propietario = propietario;
+        this.abierto = abierto;
+        this.dInicio = dInicio;
+        this.dFin = dFin;
+    }
+
+    public Date getdInicio() {
+        return dInicio;
+    }
+
+    public void setdInicio(Date dInicio) {
+        this.dInicio = dInicio;
+    }
+
+    public Date getdFin() {
+        return dFin;
+    }
+
+    public void setdFin(Date dFin) {
+        this.dFin = dFin;
+    }
 
     public int getIdproducto() {
         return idproducto;
