@@ -1,7 +1,5 @@
 package com.example.eneko.ermercailloh;
 
-import android.text.method.DateTimeKeyListener;
-
 import java.util.Date;
 
 /**
@@ -16,10 +14,17 @@ public class Producto {
     private float pujamaxima;
     private int propietario;
     private int abierto;
-    private Date dInicio;
-    private Date dFin;
+    private Date fechaapertura;
+    private Date fechacierre;
 
-    public Producto(int idproducto, String nombre, String descripcion, int idmaxpujador, float pujamaxima, int propietario, int abierto, Date dInicio, Date dFin) {
+    public Producto(String nombre, String descripcion, int Propietario, Date fechaapertura, Date fechacierre) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.fechaapertura = fechaapertura;
+        this.fechacierre = fechacierre;
+        this.propietario = Propietario;
+    }
+    public Producto(int idproducto, String nombre, String descripcion, int idmaxpujador, float pujamaxima, int propietario, int abierto, Date fechaapertura, Date fechacierre) {
         this.idproducto = idproducto;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -27,24 +32,25 @@ public class Producto {
         this.pujamaxima = pujamaxima;
         this.propietario = propietario;
         this.abierto = abierto;
-        this.dInicio = dInicio;
-        this.dFin = dFin;
+        this.fechaapertura = fechaapertura;
+        this.fechacierre = fechacierre;
+        
     }
 
-    public Date getdInicio() {
-        return dInicio;
+    public Date getFechaapertura() {
+        return fechaapertura;
     }
 
-    public void setdInicio(Date dInicio) {
-        this.dInicio = dInicio;
+    public void setFechaapertura(Date fechaapertura) {
+        this.fechaapertura = fechaapertura;
     }
 
-    public Date getdFin() {
-        return dFin;
+    public Date getFechacierre() {
+        return fechacierre;
     }
 
-    public void setdFin(Date dFin) {
-        this.dFin = dFin;
+    public void setFechacierre(Date fechacierre) {
+        this.fechacierre = fechacierre;
     }
 
     public int getIdproducto() {

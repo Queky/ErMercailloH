@@ -113,6 +113,8 @@ public class MainActivity extends AppCompatActivity
            fragment = new DatosUsuario();
            fragmentTransaction =true;
         } else if (id == R.id.subir_articulo) {
+            fragment = new subirArticulo();
+            fragmentTransaction=true;
 
         } else if (id == R.id.mis_articulos) {
             fragment = new articulosUsuario();
