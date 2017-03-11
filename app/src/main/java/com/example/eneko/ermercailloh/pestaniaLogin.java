@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.List;
+
 import retrofit.Call;
 import retrofit.Callback;
 import retrofit.GsonConverterFactory;
@@ -59,17 +61,27 @@ public class pestaniaLogin extends Fragment {
 
                 Servicio service = retrofit.create(Servicio.class);
 
-                Call<Usuario> call = service.getUsuario(1);
+                //Call<Usuario> call = service.getUsuario(1);
+                Call<List<Usuario>> call = service.findByEmailAndPass(txtemail.getText().toString(),txtcontrasenia.getText().toString());
 
-                call.enqueue(new Callback<Usuario>() {
+                call.enqueue(new Callback<List<Usuario>>() {
                     @Override
-                    public void onResponse(Response<Usuario> response, Retrofit retrofit) {
+                    public void onResponse(Response<List<Usuario>> response, Retrofit retrofit) {
 
                         try {
-                            u1.setAtri(response.body().getIdUsusario(),response.body().getNombre(),
-                                    response.body().getApellido(),response.body().getEmail(),response.body().getPassword());
 
+                            List<Usuario> ListaUsuarios = response.body();
 
+                            for (int i = 0; i < ListaUsuarios.size(); i++) {
+
+                                if (i == 0) {
+                                    u1.setAtri(ListaUsuarios.get(i).getIdusuario(),ListaUsuarios.get(i).getNombre(),
+                                            ListaUsuarios.get(i).getApellido(),ListaUsuarios.get(i).getEmail(),ListaUsuarios.get(i).getPassword());
+                                   //textViewToChange.setText(StudentData.get(i).getNombre());
+                                } else if (i == 1) {
+
+                                }
+                            }
 
                         } catch (Exception e) {
                             //.d("onResponse", "There is an error");

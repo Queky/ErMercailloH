@@ -6,7 +6,7 @@ package com.example.eneko.ermercailloh;
  */
 
 public class Usuario {
-    public int idUsusario;
+    public int idusuario;
     public String apellido;
     public String nombre;
     public String email;
@@ -21,12 +21,12 @@ public class Usuario {
     private Usuario() {
     }
 
-    public int getIdUsusario() {
-        return idUsusario;
+    public int getIdusuario() {
+        return idusuario;
     }
 
     public void setIdUsusario(int idUsusario) {
-        this.idUsusario = idUsusario;
+        this.idusuario = idUsusario;
     }
 
     public String getApellido() {
@@ -65,8 +65,8 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public void  setAtri(int idUsusario, String nombre, String apellido, String email, String password) {
-        this.idUsusario = idUsusario;
+    public void  setAtri(int idusuario, String nombre, String apellido, String email, String password) {
+        this.idusuario = idusuario;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;

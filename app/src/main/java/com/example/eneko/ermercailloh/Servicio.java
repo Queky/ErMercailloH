@@ -20,4 +20,10 @@ public interface Servicio {
 
     @GET("usuario/buscar/{email}/{pass}")
     Call<List<Usuario>> findByEmailAndPass(@Path("email") String email, @Path("pass") String pass);
+
+    @GET("producto/propietario/{id}")
+    Call<List<Producto>> findAllByOwner(@Path("id") int id);
+
+    @POST("producto")
+    Call<Producto> create(@Body Producto producto);
 }

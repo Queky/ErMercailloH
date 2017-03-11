@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         Usuario u1 = Usuario.getInstance();
         //this.getWindow().getDecorView().findViewById(R.id.intro).setVisibility(View.VISIBLE);
         if(!u1.estaLogueado){
-           // navigationView.getMenu().findItem(R.id.Usuario).setVisible(false);
+            navigationView.getMenu().findItem(R.id.Usuario).setVisible(false);
             navigationView.getMenu().findItem(R.id.subir_articulo).setVisible(false);
             navigationView.getMenu().findItem(R.id.mis_articulos).setVisible(false);
             navigationView.getMenu().findItem(R.id.mis_pujas).setVisible(false);
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity
             navigationView.getMenu().findItem(R.id.login).setVisible(false);
             //Recuperamos la información pasada en el intent
             Bundle bundle = this.getIntent().getExtras();
-            //navigationView.getMenu().findItem(R.id.Usuario).setTitle(bundle.getString("NOMBRE"));
+            navigationView.getMenu().findItem(R.id.Usuario).setTitle(bundle.getString("NOMBRE"));
 
         }
 
@@ -110,12 +110,13 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction =true;
 
         } else if (id == R.id.Usuario) {
-            fragment = new datosGet();
-            fragmentTransaction =true;
+           fragment = new DatosUsuario();
+           fragmentTransaction =true;
         } else if (id == R.id.subir_articulo) {
 
         } else if (id == R.id.mis_articulos) {
-
+            fragment = new articulosUsuario();
+            fragmentTransaction =true;
         }
 
         if(fragmentTransaction) {
