@@ -74,13 +74,26 @@ public class pestaniaLogin extends Fragment {
 
                             for (int i = 0; i < ListaUsuarios.size(); i++) {
 
-                                if (i == 0) {
+
                                     u1.setAtri(ListaUsuarios.get(i).getIdusuario(),ListaUsuarios.get(i).getNombre(),
                                             ListaUsuarios.get(i).getApellido(),ListaUsuarios.get(i).getEmail(),ListaUsuarios.get(i).getPassword());
                                    //textViewToChange.setText(StudentData.get(i).getNombre());
-                                } else if (i == 1) {
 
-                                }
+
+
+                            }
+                            if(txtcontrasenia.getText().toString().equals(u1.getPassword())){
+                                //Creamos el Intent
+                                u1.estaLogueado=true;
+                                Intent i=new Intent(getActivity(),MainActivity.class);
+                                //Creamos la información a pasar entre actividades
+                                Bundle b = new Bundle();
+                                b.putString("NOMBRE", u1.nombre);
+
+                                //Añadimos la información al intent
+                                i.putExtras(b);
+                                startActivity(i);
+
                             }
 
                         } catch (Exception e) {
@@ -96,19 +109,7 @@ public class pestaniaLogin extends Fragment {
                         // Log.d("onFailure", t.toString());
                     }
                 });
-                if(txtcontrasenia.getText().toString().equals(u1.getPassword())){
-                    //Creamos el Intent
-                    u1.estaLogueado=true;
-                    Intent i=new Intent(getActivity(),MainActivity.class);
-                    //Creamos la información a pasar entre actividades
-                    Bundle b = new Bundle();
-                    b.putString("NOMBRE", u1.nombre);
 
-                    //Añadimos la información al intent
-                    i.putExtras(b);
-                    startActivity(i);
-
-                }
             }
         });
 
