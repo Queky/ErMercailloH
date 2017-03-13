@@ -70,8 +70,8 @@ public class articulosUsuario extends Fragment {
 
                                 if (i == 0) {
                                     Producto p1 = new Producto(ListaProductos.get(i).getIdproducto(),ListaProductos.get(i).getNombre(),
-                                            ListaProductos.get(i).getDescripcion(),ListaProductos.get(i).getIdmaxpujador(),ListaProductos.get(i).getPujamaxima(),
-                                            ListaProductos.get(i).getPropietario(),ListaProductos.get(i).getAbierto());
+                                            ListaProductos.get(i).getDescripcion(), ListaProductos.get(i).getPropietario(),ListaProductos.get(i).getIdmaxpujador(),ListaProductos.get(i).getPujamaxima(),
+                                           ListaProductos.get(i).getAbierto(),1234,1234);
                                     lp.addProducto(p1);
                                     TextView tvID = new TextView(view.getContext());
                                     TextView tvDes= new TextView(view.getContext());
@@ -92,8 +92,8 @@ public class articulosUsuario extends Fragment {
 
                                 } else  {
                                     Producto p1 = new Producto(ListaProductos.get(i).getIdproducto(),ListaProductos.get(i).getNombre(),
-                                            ListaProductos.get(i).getDescripcion(),ListaProductos.get(i).getIdmaxpujador(),ListaProductos.get(i).getPujamaxima(),
-                                            ListaProductos.get(i).getPropietario(),ListaProductos.get(i).getAbierto());
+                                            ListaProductos.get(i).getDescripcion(), ListaProductos.get(i).getPropietario(),ListaProductos.get(i).getIdmaxpujador(),ListaProductos.get(i).getPujamaxima(),
+                                            ListaProductos.get(i).getAbierto(),1234,1234);
                                     lp.addProducto(p1);
                                     TextView tvID = new TextView(view.getContext());
                                     TextView tvDes= new TextView(view.getContext());
