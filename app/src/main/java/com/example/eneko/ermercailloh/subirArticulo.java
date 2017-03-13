@@ -63,13 +63,8 @@ public class subirArticulo extends Fragment {
                         .build();
 
                 Servicio service = retrofit.create(Servicio.class);
-                //String f1 = txtFechaApertura.getText().toString();
 
-                //Call<Usuario> call = service.getUsuario(1);
-                //Producto p1 = new Producto(txtNombre.getText().toString(), txtDescripcion.getText().toString(),u1.getIdusuario();
-                 //       "1489186800000" ,"1489532400000");
-               // Producto prueba = new Producto(55,"sdff","aedfaf",0,0,u1.getIdusuario(),1,new Date("2017-03-13 00:00:00") ,new Date("2017-03-15 00:00:00"));
-                Producto p1 = new Producto(1,"eeee","eeee",u1.getIdusuario(),0,0,1,12345676,123456);
+                Producto p1 = new Producto(55,"eeee","eeee",1,0,0,1,1489256985955l,1489256985955l);
                 Call<Producto> call = service.create(p1);
 
                 call.enqueue(new Callback<Producto>() {
@@ -78,7 +73,7 @@ public class subirArticulo extends Fragment {
 
                         try {
 
-                          Producto producto = response.body();
+
 
                         } catch (Exception e) {
                             //.d("onResponse", "There is an error");

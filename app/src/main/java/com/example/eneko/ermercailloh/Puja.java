@@ -1,5 +1,7 @@
 package com.example.eneko.ermercailloh;
 
+import java.math.BigInteger;
+
 /**
  * Created by Eneko on 13/03/2017.
  */
@@ -10,6 +12,7 @@ public class Puja {
     private Integer idususario;
     private float preciopuja;
     private long fechapuja;
+
 
     public Puja(Integer idpuja, Integer idproducto, Integer idususario, float preciopuja, long fechapuja) {
         this.idpuja = idpuja;
