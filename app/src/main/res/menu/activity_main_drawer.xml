@@ -9,28 +9,21 @@
         <item
             android:id="@+id/Usuario"
             android:icon="@drawable/ic_menu_gallery"
-            android:title=""/>
-
+            android:title="Prueba"/>
+        <item
+            android:id="@+id/subir_articulo"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Subir Articulo" />
+        <item
+            android:id="@+id/mis_articulos"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Mis Articulos" />
+        <item
+            android:id="@+id/mis_pujas"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Mis Pujas" />
     </group>
 
-    <item
-        android:id="@+id/menu_articulos"
-        android:title="Articulos"
-       >
-        <menu>
-            <item
-                android:id="@+id/subir_articulo"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Subir Articulo" />
-            <item
-                android:id="@+id/mis_articulos"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Mis Articulos" />
-            <item
-                android:id="@+id/mis_pujas"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Mis Pujas" />
-        </menu>
-    </item>
+
 
 </menu>

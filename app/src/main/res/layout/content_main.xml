@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:clickable="true"
     tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:id="@+id/pepe">
 
     <!-- Toolbar -->
     <android.support.v7.widget.Toolbar
@@ -24,6 +25,35 @@
     <FrameLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/intro"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+            <TextView
+                android:text="Bienvenido a ErMercadilloH"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:layout_marginLeft="5dp"
+                />
+
+            <TextView
+                android:text="Una web de regateo en la que puedes pujar por muchos articulos."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_marginLeft="5dp"
+                />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 </LinearLayout>
