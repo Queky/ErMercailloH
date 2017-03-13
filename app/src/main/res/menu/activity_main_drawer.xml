@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+<<<<<<< HEAD
     <item android:title="Opciones">
         <menu>
             <item
@@ -15,6 +16,37 @@
                 android:id="@+id/action_productos"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Mis productos" />
+=======
+    <group  android:checkableBehavior="single">
+        <item
+            android:id="@+id/login"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Loguearse" />
+        <item
+            android:id="@+id/Usuario"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title=""/>
+
+    </group>
+
+    <item
+        android:id="@+id/menu_articulos"
+        android:title="Articulos"
+       >
+        <menu>
+            <item
+                android:id="@+id/subir_articulo"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Subir Articulo" />
+            <item
+                android:id="@+id/mis_articulos"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Mis Articulos" />
+            <item
+                android:id="@+id/mis_pujas"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Mis Pujas" />
+>>>>>>> refs/remotes/origin/Entrgable1eko44
         </menu>
     </item>
 
