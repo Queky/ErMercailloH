@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -53,8 +54,8 @@ public class pestaniaLogin extends Fragment {
         txtemail = (EditText) view.findViewById(R.id.editTextemail);
 
 
-        final  String ip = prefs.getString("iP", "55555");
-       final String puerto = prefs.getString("puerto","555555");
+        final  String ip = prefs.getString("iP", "10.0.2.2");
+       final String puerto = prefs.getString("puerto","8084");
         txtcontrasenia = (EditText) view.findViewById(R.id.editTextpaswword);
 
         b1 =(Button)view.findViewById(R.id.button);
@@ -100,8 +101,13 @@ public class pestaniaLogin extends Fragment {
 
                                 //Añadimos la información al intent
                                 i.putExtras(b);
+                                Toast toast = Toast.makeText(getContext(), "Bienvenido "+u1.getNombre()+" "+u1.getApellido()+".", Toast.LENGTH_SHORT);
+                                toast.show();
                                 startActivity(i);
 
+                            }else{
+                                Toast toast = Toast.makeText(getContext(), "El usuario o contraseña no son correctas.", Toast.LENGTH_SHORT);
+                                toast.show();
                             }
 
                         } catch (Exception e) {

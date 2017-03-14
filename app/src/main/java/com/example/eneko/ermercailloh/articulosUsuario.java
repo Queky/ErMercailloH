@@ -1,7 +1,9 @@
 package com.example.eneko.ermercailloh;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,8 +30,8 @@ import retrofit.Retrofit;
  * A simple {@link Fragment} subclass.
  */
 public class articulosUsuario extends Fragment {
-
     ListaProductos lp = ListaProductos.getInstance();
+    SharedPreferences prefs;
     public articulosUsuario() {
         // Required empty public constructor
     }
@@ -40,6 +42,7 @@ public class articulosUsuario extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_articulos_usuario, container, false);
+        prefs =getActivity().getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
         return view;
     }
 
@@ -47,12 +50,13 @@ public class articulosUsuario extends Fragment {
 
                 final LinearLayout miVista = (LinearLayout) view.findViewById(R.id.LYN);
                 final Usuario u1 = Usuario.getInstance();
+                 final  String ip = prefs.getString("iP", "10.0.2.2");
+                  final String puerto = prefs.getString("puerto","8084");
 
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://10.0.2.2:8084/erMercailloHSW/rest/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://"+ip+":"+puerto+"/erMercailloHSW/rest/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
                 Servicio service = retrofit.create(Servicio.class);
 
                 //Call<Usuario> call = service.getUsuario(1);

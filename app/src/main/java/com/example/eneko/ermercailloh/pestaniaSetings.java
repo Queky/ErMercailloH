@@ -35,18 +35,16 @@ public class pestaniaSetings extends Fragment {
 
        final EditText txtIP = (EditText) view.findViewById(R.id.editTextDireccionIP);
       final   EditText txtPuerto = (EditText) view.findViewById(R.id.editTextPuerto);
-      final SharedPreferences prefs =
-                this.getActivity().getSharedPreferences("MisPreferencias",Context.MODE_PRIVATE);
+     // final SharedPreferences prefs =
+               // this.getActivity().getSharedPreferences("MisPreferencias",Context.MODE_PRIVATE);
 
 
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("iP", txtIP.getText().toString());
-        editor.putString("puerto", txtPuerto.getText().toString());
-        editor.commit();
         final Button b1 =(Button)view.findViewById(R.id.buttonGuardar);
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                final SharedPreferences prefs =
+                        getActivity().getSharedPreferences("MisPreferencias",Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("iP", txtIP.getText().toString());
                 editor.putString("puerto", txtPuerto.getText().toString());

@@ -58,27 +58,30 @@
                     android:id="@+id/editDesSA" />
 
                 <TextView
-                    android:text="Fecha apertura:"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView10" />
-
-                <CalendarView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/calendarView"
-                    />
-
-                <TextView
                     android:text="Fecha cierre:"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView11" />
 
-                <CalendarView
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/calendarView2" />
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/editFcierreSA" />
+
+                <TextView
+                    android:text="Hora Cierre:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/editHCierreSA" />
 
                 <Button
                     android:text="¡ Subir Articulo !"

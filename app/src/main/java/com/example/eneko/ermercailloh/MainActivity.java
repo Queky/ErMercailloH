@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             fragment = new pestaniaSetings();
             fragmentTransaction =true;
-            Toast toast = Toast.makeText(this.getCurrentFocus().getContext(), "Introduce el serverId", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this.getCurrentFocus().getContext(), "Introduce los datos", Toast.LENGTH_SHORT);
             toast.show();
 
         }
