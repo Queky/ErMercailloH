@@ -1,7 +1,9 @@
 package com.example.eneko.ermercailloh;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -28,6 +31,7 @@ public class pestaniaLogin extends Fragment {
     Button b1;
     Usuario u1;
     String contrasenia1;
+    SharedPreferences prefs;
     public pestaniaLogin() {
         // Required empty public constructor
     }
@@ -37,6 +41,7 @@ public class pestaniaLogin extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_pestania_login, container, false);
+            prefs =getActivity().getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
 
 
         return view;
@@ -48,14 +53,18 @@ public class pestaniaLogin extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         txtemail = (EditText) view.findViewById(R.id.editTextemail);
 
+
+        final  String ip = prefs.getString("iP", "10.0.2.2");
+       final String puerto = prefs.getString("puerto","8084");
         txtcontrasenia = (EditText) view.findViewById(R.id.editTextpaswword);
 
         b1 =(Button)view.findViewById(R.id.button);
         u1 = Usuario.getInstance();
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://10.0.2.2:8084/erMercailloHSW/rest/")
+                        .baseUrl("http://"+ip+":"+puerto+"/erMercailloHSW/rest/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 
@@ -92,8 +101,13 @@ public class pestaniaLogin extends Fragment {
 
                                 //Añadimos la información al intent
                                 i.putExtras(b);
+                                Toast toast = Toast.makeText(getContext(), "Bienvenido "+u1.getNombre()+" "+u1.getApellido()+".", Toast.LENGTH_SHORT);
+                                toast.show();
                                 startActivity(i);
 
+                            }else{
+                                Toast toast = Toast.makeText(getContext(), "El usuario o contraseña no son correctas.", Toast.LENGTH_SHORT);
+                                toast.show();
                             }
 
                         } catch (Exception e) {
