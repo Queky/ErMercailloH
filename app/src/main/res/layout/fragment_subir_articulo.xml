@@ -6,98 +6,100 @@
     tools:context="com.example.eneko.ermercailloh.subirArticulo">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Introduce los datos del articulo a subir:" />
-
-        <TextView
-            android:text="-------------------------------------------------------------"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView9" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:text="Nombre:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView7" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Introduce los datos del articulo a subir:" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editNombreSA" />
+            <TextView
+                android:text="-------------------------------------------------------------"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9" />
 
-        <TextView
-            android:text="Descripción:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView8" />
+            <TextView
+                android:text="Nombre:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editDesSA" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editNombreSA" />
 
-        <TextView
-            android:text="Fecha apertura:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView10" />
+            <TextView
+                android:text="Descripción:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8" />
 
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editDesSA" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editFaperSA" />
+            <TextView
+                android:text="Fecha apertura:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView10" />
 
-        <TextView
-            android:text="Fecha cierre:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView11" />
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editFcierreSA" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editFaperSA" />
 
-        <Button
-            android:id="@+id/buttonSubirArt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="¡ Subir Articulo !" />
+            <TextView
+                android:text="Fecha cierre:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11" />
 
-        <Button
-            android:id="@+id/buttonSubirImg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Subir imagen" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editFcierreSA" />
 
-        <ImageView
-            android:id="@+id/imagenArticulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/buttonSubirArt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¡ Subir Articulo !" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/buttonSubirImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subir imagen" />
 
+            <ImageView
+                android:id="@+id/imagenArticulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>

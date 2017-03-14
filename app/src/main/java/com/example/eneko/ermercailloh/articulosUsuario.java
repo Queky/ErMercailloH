@@ -2,19 +2,30 @@ package com.example.eneko.ermercailloh;
 
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
+import com.squareup.picasso.Picasso;
+
 import org.w3c.dom.Text;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 
 import retrofit.Call;
@@ -78,6 +89,8 @@ public class articulosUsuario extends Fragment {
                                     TextView tvNom = new TextView(view.getContext());
                                     TextView tvPropietario= new TextView(view.getContext());
                                     TextView tvLine= new TextView(view.getContext());
+                                    TextView tvImagen = new TextView(view.getContext());
+                                    ImageView articleImage = new ImageView(view.getContext());
                                     tvID.setText("Id del producto: "+p1.getIdproducto());
                                     miVista.addView(tvID);
                                     tvNom.setText("Nombre del producto: "+p1.getNombre());
@@ -86,6 +99,10 @@ public class articulosUsuario extends Fragment {
                                     miVista.addView(tvDes);
                                     tvPropietario.setText("Propietario: "+u1.getNombre()+" "+u1.getApellido());
                                     miVista.addView(tvPropietario);
+                                    tvImagen.setText("Imagen del articulo:");
+                                    Picasso.with(view.getContext()).load("http://10.0.2.2:8084"+p1.getImagenuri())
+                                            .resize((int)(view.getWidth()*0.5),((int)(view.getHeight()*0.3))).centerCrop().into(articleImage);
+                                    miVista.addView(articleImage);
                                     tvLine.setText("-------------------------------------------------------");
                                     miVista.addView(tvLine);
 
@@ -100,6 +117,7 @@ public class articulosUsuario extends Fragment {
                                     TextView tvNom = new TextView(view.getContext());
                                     TextView tvPropietario= new TextView(view.getContext());
                                     TextView tvLine= new TextView(view.getContext());
+                                    ImageView articleImage = new ImageView(view.getContext());
                                     tvID.setText("Id del producto: "+p1.getIdproducto());
                                     miVista.addView(tvID);
                                     tvNom.setText("Nombre del producto: "+p1.getNombre());
@@ -108,6 +126,9 @@ public class articulosUsuario extends Fragment {
                                     miVista.addView(tvDes);
                                     tvPropietario.setText("Propietario: "+u1.getNombre()+" "+u1.getApellido());
                                     miVista.addView(tvPropietario);
+                                    Picasso.with(view.getContext()).load("http://10.0.2.2:8084"+p1.getImagenuri())
+                                            .resize((int)(view.getWidth()*0.5),((int)(view.getHeight()*0.3))).centerCrop().into(articleImage);
+                                    miVista.addView(articleImage);
                                     tvLine.setText("-------------------------------------------------------");
                                     miVista.addView(tvLine);
                                 }
@@ -128,8 +149,5 @@ public class articulosUsuario extends Fragment {
                 });
 
             }
-
-
-
     }
 
