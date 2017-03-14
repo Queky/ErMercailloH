@@ -16,6 +16,7 @@ public class Producto {
     private int abierto;
     private long fechaapertura;
     private long fechacierre;
+    private String imagenuri;
 
     public Producto(int idproducto, String nombre, String descripcion, int propietario, int idmaxpujador, float pujamaxima, int abierto, long fechaapertura, long fechacierre) {
         this.idproducto = idproducto;
@@ -29,7 +30,26 @@ public class Producto {
         this.fechacierre = fechacierre;
     }
 
+    public Producto(int idproducto, String nombre, String descripcion,String imagenuri, int propietario, int idmaxpujador, float pujamaxima, int abierto, long fechaapertura, long fechacierre) {
+        this.idproducto = idproducto;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.propietario = propietario;
+        this.idmaxpujador = idmaxpujador;
+        this.pujamaxima = pujamaxima;
+        this.abierto = abierto;
+        this.fechaapertura = fechaapertura;
+        this.fechacierre = fechacierre;
+        this.imagenuri = imagenuri;
+    }
 
+    public String getImagenuri() {
+        return imagenuri;
+    }
+
+    public void setImagenuri(String imagenuri) {
+        this.imagenuri = imagenuri;
+    }
 
     public int getIdproducto() {
         return idproducto;

@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -85,13 +86,30 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        boolean fragmentTransaction = false;
+        Fragment fragment = null;
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
-        }
+            fragment = new pestaniaSetings();
+            fragmentTransaction =true;
+            Toast toast = Toast.makeText(this.getCurrentFocus().getContext(), "Introduce el serverId", Toast.LENGTH_SHORT);
+            toast.show();
 
-        return super.onOptionsItemSelected(item);
+        }
+        if(fragmentTransaction) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.content_frame, fragment)
+                    .commit();
+
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawers();
+
+
+        return true;
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
