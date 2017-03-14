@@ -1,7 +1,5 @@
 package com.example.eneko.ermercailloh;
 
-import java.util.Date;
-
 /**
  * Created by Eneko on 11/03/2017.
  */
@@ -16,8 +14,9 @@ public class Producto {
     private int abierto;
     private long fechaapertura;
     private long fechacierre;
+    private String imagenuri;
 
-    public Producto(int idproducto, String nombre, String descripcion, int propietario, int idmaxpujador, float pujamaxima, int abierto, long fechaapertura, long fechacierre) {
+    public Producto(int idproducto, String nombre, String descripcion, String imagenuri, int propietario, int idmaxpujador, float pujamaxima, int abierto, long fechaapertura, long fechacierre) {
         this.idproducto = idproducto;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -27,9 +26,8 @@ public class Producto {
         this.abierto = abierto;
         this.fechaapertura = fechaapertura;
         this.fechacierre = fechacierre;
+        this.imagenuri = imagenuri;
     }
-
-
 
     public int getIdproducto() {
         return idproducto;
@@ -103,7 +101,7 @@ public class Producto {
         this.fechacierre = fechacierre;
     }
 
+    public String getImagenuri() {return imagenuri;}
 
-
-
+    public void setImagenuri(String imagenuri) {this.imagenuri = imagenuri;}
 }
