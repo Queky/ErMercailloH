@@ -32,6 +32,11 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/textView9" />
 
+                <ImageView
+                    android:id="@+id/imagenArticulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
                 <Button
                     android:id="@+id/buttonSubirImg"
                     android:layout_width="match_parent"
@@ -99,11 +104,6 @@
                     android:id="@+id/buttonSubirArt"
                     android:elevation="10px"
                     android:backgroundTint="?attr/colorControlHighlight" />
-
-                <ImageView
-                    android:id="@+id/imagenArticulo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
         </LinearLayout>
