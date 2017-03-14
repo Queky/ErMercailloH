@@ -90,19 +90,30 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        boolean fragmentTransaction = false;
+        Fragment fragment = null;
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
-        }
+            fragment = new pestaniaSetings();
+            fragmentTransaction =true;
+            Toast toast = Toast.makeText(this.getCurrentFocus().getContext(), "Introduce los datos", Toast.LENGTH_SHORT);
+            toast.show();
 
-        else if(id == R.id.action_buscar){
-            Toast toast1 =
-                    Toast.makeText(getApplicationContext(), "Buscar articulo", Toast.LENGTH_SHORT);
-            toast1.show();
         }
+        if(fragmentTransaction) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.content_frame, fragment)
+                    .commit();
 
-        return super.onOptionsItemSelected(item);
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawers();
+
+
+        return true;
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

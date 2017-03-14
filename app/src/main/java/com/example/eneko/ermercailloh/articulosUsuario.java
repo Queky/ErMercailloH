@@ -1,9 +1,9 @@
 package com.example.eneko.ermercailloh;
 
 
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -17,15 +17,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
 
 import retrofit.Call;
@@ -41,6 +36,7 @@ import retrofit.Retrofit;
 public class articulosUsuario extends Fragment {
 
     ListaProductos lp = ListaProductos.getInstance();
+    SharedPreferences prefs;
     public articulosUsuario() {
         // Required empty public constructor
     }
@@ -51,6 +47,7 @@ public class articulosUsuario extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_articulos_usuario, container, false);
+        prefs =getActivity().getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
         return view;
     }
 
@@ -58,12 +55,13 @@ public class articulosUsuario extends Fragment {
 
                 final LinearLayout miVista = (LinearLayout) view.findViewById(R.id.LYN);
                 final Usuario u1 = Usuario.getInstance();
+                 final  String ip = prefs.getString("iP", "10.0.2.2");
+                  final String puerto = prefs.getString("puerto","8084");
 
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://10.0.2.2:8084/erMercailloHSW/rest/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://"+ip+":"+puerto+"/erMercailloHSW/rest/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
                 Servicio service = retrofit.create(Servicio.class);
 
                 //Call<Usuario> call = service.getUsuario(1);
@@ -100,7 +98,7 @@ public class articulosUsuario extends Fragment {
                                     tvPropietario.setText("Propietario: "+u1.getNombre()+" "+u1.getApellido());
                                     miVista.addView(tvPropietario);
                                     tvImagen.setText("Imagen del articulo:");
-                                    Picasso.with(view.getContext()).load("http://10.0.2.2:8084"+p1.getImagenuri())
+                                    Picasso.with(view.getContext()).load("http://"+ip+":"+puerto+p1.getImagenuri())
                                             .resize((int)(view.getWidth()*0.5),((int)(view.getHeight()*0.3))).centerCrop().into(articleImage);
                                     miVista.addView(articleImage);
                                     tvLine.setText("-------------------------------------------------------");
@@ -126,7 +124,7 @@ public class articulosUsuario extends Fragment {
                                     miVista.addView(tvDes);
                                     tvPropietario.setText("Propietario: "+u1.getNombre()+" "+u1.getApellido());
                                     miVista.addView(tvPropietario);
-                                    Picasso.with(view.getContext()).load("http://10.0.2.2:8084"+p1.getImagenuri())
+                                    Picasso.with(view.getContext()).load("http://"+ip+":"+puerto+p1.getImagenuri())
                                             .resize((int)(view.getWidth()*0.5),((int)(view.getHeight()*0.3))).centerCrop().into(articleImage);
                                     miVista.addView(articleImage);
                                     tvLine.setText("-------------------------------------------------------");

@@ -1,9 +1,12 @@
 package com.example.eneko.ermercailloh;
 
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,9 +17,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
+import android.widget.Toast;
 import android.widget.ImageView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.List;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -25,6 +35,8 @@ import retrofit.Callback;
 import retrofit.GsonConverterFactory;
 import retrofit.Response;
 import retrofit.Retrofit;
+import java.util.Date;
+import java.util.Locale;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -39,6 +51,7 @@ public class subirArticulo extends Fragment {
     EditText txtDescripcion;
     EditText txtFechaApertura;
     EditText txtFechaCierre;
+    SharedPreferences prefs;
     String encoded = "base64,";
 
     // He tenido crear esto para que se pueda mostrar la imagen en la app al elegirla
@@ -56,6 +69,7 @@ public class subirArticulo extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_subir_articulo, container, false);
+        prefs =getActivity().getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
         this.view = view;
         return view;
     }
@@ -64,32 +78,87 @@ public class subirArticulo extends Fragment {
         txtNombre = (EditText) view.findViewById(R.id.editNombreSA);
 
         txtDescripcion= (EditText) view.findViewById(R.id.editDesSA);
-        txtFechaApertura = (EditText) view.findViewById(R.id.editFaperSA);
+
+        //txtFechaApertura = (EditText) view.findViewById(R.id.editFaperSA);
         txtFechaCierre= (EditText) view.findViewById(R.id.editFcierreSA);
+        final EditText txtHoraCierre = (EditText) view.findViewById(R.id.editHCierreSA);
+        final Calendar calendar = new GregorianCalendar();
+        final Calendar calendarActual = new GregorianCalendar();
+        prefs =getActivity().getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
 
-
+        final  String ip = prefs.getString("iP", "10.0.2.2");
+        final String puerto = prefs.getString("puerto","8084");
 
         b1 =(Button)view.findViewById(R.id.buttonSubirArt);
+        final View.OnClickListener dateListener = new View.OnClickListener() {
+            final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                      int dayOfMonth) {
+                    // TODO Auto-generated method stub
+                    calendar.set(Calendar.YEAR, year);
+                    calendar.set(Calendar.MONTH, monthOfYear);
+                    calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                    String myFormat = "dd/MM/yyyy"; //In which you need put here
+                    SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+                    txtFechaCierre.setText(sdf.format(calendar.getTime()));
+                }
+            };
 
+            public void onClick(View v) {
+                txtFechaCierre.setFocusable(false);
+                DatePickerDialog dialog = new DatePickerDialog(getContext(), date, calendarActual.get(
+                        Calendar.YEAR), calendarActual.get(Calendar.MONTH), calendarActual.get(Calendar.DAY_OF_MONTH));
+                dialog.show();
+            }
+        };
+
+        txtFechaCierre.setOnClickListener(dateListener);
+
+        final View.OnClickListener hourListener = new View.OnClickListener() {
+            final TimePickerDialog.OnTimeSetListener hour = new TimePickerDialog.OnTimeSetListener() {
+                @Override
+                public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                    calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                    calendar.set(Calendar.MINUTE, minute);
+                    String myFormat = "HH:mm"; //In which you need put here
+                    SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+                    txtHoraCierre.setText(sdf.format(calendar.getTime()));
+                }
+            };
+
+            public void onClick(View v) {
+                txtHoraCierre.setFocusable(false);
+                TimePickerDialog dialog = new TimePickerDialog(getContext(), hour, calendarActual.get(
+                        Calendar.HOUR_OF_DAY), calendarActual.get(Calendar.MINUTE), true);
+                dialog.show();
+            }
+        };
+
+        txtHoraCierre.setOnClickListener(hourListener);
         u1 = Usuario.getInstance();
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://10.0.2.2:8084/erMercailloHSW/rest/")
+                        .baseUrl("http://"+ip+":"+puerto+"/erMercailloHSW/rest/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 
                 final Servicio service = retrofit.create(Servicio.class);
 
-                Producto p1 = new Producto(1,"eeee","eeee",encoded,1,0,0,1,1489256985955l,1489256985955l);
+                Producto p1 = new Producto(0, txtNombre.getText().toString(), txtDescripcion.getText().toString(),
+                        encoded,1,0,0,1, Calendar.getInstance().getTimeInMillis(), calendar.getTimeInMillis());
                 //Log.d("subida imagen producto", encoded);
                 Call<Producto> call = service.create(p1);
 
+                Toast toast = Toast.makeText(getContext(), "Se subio el articulo "+txtNombre.getText().toString()+" correctamente.", Toast.LENGTH_SHORT);
+                toast.show();
                 call.enqueue(new Callback<Producto>() {
                     @Override
                     public void onResponse(Response<Producto> response, Retrofit retrofit) {
 
                         try {
+
 
                         } catch (Exception e) {
                             //Log.d("onResponse", "There is an error");
@@ -112,7 +181,7 @@ public class subirArticulo extends Fragment {
         btnImgUpload.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://10.0.2.2:8084/erMercailloHSW/rest/")
+                        .baseUrl("http://"+ip+":"+puerto+"/erMercailloHSW/rest/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 
