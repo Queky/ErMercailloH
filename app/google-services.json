@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "200005194556",
+    "firebase_url": "https://ermercailloh-7702b.firebaseio.com",
+    "project_id": "ermercailloh-7702b",
+    "storage_bucket": "ermercailloh-7702b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200005194556:android:fad1c636d5220bd2",
+        "android_client_info": {
+          "package_name": "com.example.eneko.ermercailloh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200005194556-4mq9j7tkl2m329tagudtoifqb9rjplik.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eneko.ermercailloh",
+            "certificate_hash": "ef3fcc6e8fee5cdd7659cbd3bd4246ff66fcdafe"
+          }
+        },
+        {
+          "client_id": "200005194556-vba3g4l8c4hpnt0h9opb8jl88mldmsnm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJXRzX3rZn-cQ4g8552uk6c2-aodMFfKo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200005194556-vba3g4l8c4hpnt0h9opb8jl88mldmsnm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
