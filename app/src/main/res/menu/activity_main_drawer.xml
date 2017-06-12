@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group  android:checkableBehavior="single">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/Pagina_Inicio"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Inicio" />
         <item
             android:id="@+id/login"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_accessibility_black_24dp"
             android:title="Loguearse" />
         <item
             android:id="@+id/Usuario"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Prueba"/>
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="Prueba" />
+
         <item
             android:id="@+id/subir_articulo"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/ic_cloud_upload_black_24dp"
             android:title="Subir Articulo" />
         <item
             android:id="@+id/mis_articulos"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/ic_shopping_cart_black_24dp"
             android:title="Mis Articulos" />
         <item
             android:id="@+id/mis_pujas"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/ic_gavel_black_24dp"
             android:title="Mis Pujas" />
+        <item
+            android:id="@+id/cerrar_sesion"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="Cerrar Sesión" />
     </group>
-
 
 
 </menu>

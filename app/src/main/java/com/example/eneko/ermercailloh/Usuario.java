@@ -71,11 +71,13 @@ public class Usuario {
         this.apellido = apellido;
         this.email = email;
         this.password = password;
-
-
     }
 
     public String getPassword() {
         return password;
+    }
+
+    public void cerrarSesion(){
+       estaLogueado = false;
     }
 }

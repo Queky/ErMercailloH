@@ -7,58 +7,73 @@ import java.math.BigInteger;
  */
 
 public class Puja {
-    private Integer idpuja;
-    private Integer idproducto;
-    private Integer idususario;
-    private float preciopuja;
-    private long fechapuja;
 
+    private  String tituloProducto;
+    private float precioInicial;
+    private float miPrecioPujado;
+    private float pujaMaximaArticulo;
+    private int idProducto;
+    private String imgUri;
 
-    public Puja(Integer idpuja, Integer idproducto, Integer idususario, float preciopuja, long fechapuja) {
-        this.idpuja = idpuja;
-        this.idproducto = idproducto;
-        this.idususario = idususario;
-        this.preciopuja = preciopuja;
-        this.fechapuja = fechapuja;
+    public String getImgUri() {
+        return imgUri;
     }
 
-    public Integer getIdpuja() {
-        return idpuja;
+    public void setImgUri(String imgUri) {
+        this.imgUri = imgUri;
     }
 
-    public void setIdpuja(Integer idpuja) {
-        this.idpuja = idpuja;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public Integer getIdproducto() {
-        return idproducto;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
-    public void setIdproducto(Integer idproducto) {
-        this.idproducto = idproducto;
+    public Puja() {
     }
 
-    public Integer getIdususario() {
-        return idususario;
+
+
+    public String getTituloProducto() {
+        return tituloProducto;
     }
 
-    public void setIdususario(Integer idususario) {
-        this.idususario = idususario;
+    public void setTituloProducto(String tituloProducto) {
+        this.tituloProducto = tituloProducto;
     }
 
-    public float getPreciopuja() {
-        return preciopuja;
+    public float getPrecioInicial() {
+        return precioInicial;
     }
 
-    public void setPreciopuja(float preciopuja) {
-        this.preciopuja = preciopuja;
+    public void setPrecioInicial(float precioInicial) {
+        this.precioInicial = precioInicial;
     }
 
-    public long getFechapuja() {
-        return fechapuja;
+    public float getMiPrecioPujado() {
+        return miPrecioPujado;
     }
 
-    public void setFechapuja(long fechapuja) {
-        this.fechapuja = fechapuja;
+    public void setMiPrecioPujado(float miPrecioPujado) {
+        this.miPrecioPujado = miPrecioPujado;
+    }
+
+    public float getPujaMaximaArticulo() {
+        return pujaMaximaArticulo;
+    }
+
+    public void setPujaMaximaArticulo(float pujaMaximaArticulo) {
+        this.pujaMaximaArticulo = pujaMaximaArticulo;
+    }
+
+    public Puja( String tituloProducto, float precioInicial, float miPrecioPujado, float pujaMaximaArticulo) {
+
+
+        this.tituloProducto = tituloProducto;
+        this.precioInicial = precioInicial;
+        this.miPrecioPujado = miPrecioPujado;
+        this.pujaMaximaArticulo = pujaMaximaArticulo;
     }
 }

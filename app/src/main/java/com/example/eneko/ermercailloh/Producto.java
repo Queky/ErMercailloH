@@ -7,115 +7,60 @@ import java.util.Date;
  */
 
 public class Producto {
-    private int idproducto;
-    private String nombre;
-    private String descripcion;
-    private int propietario;
-    private int idmaxpujador;
-    private float pujamaxima;
-    private int abierto;
-    private long fechaapertura;
-    private long fechacierre;
-    private String imagenuri;
 
-    public Producto(int idproducto, String nombre, String imagenuri, int propietario, int idmaxpujador, float pujamaxima, int abierto, long fechaapertura, long fechacierre) {
-        this.idproducto = idproducto;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.propietario = propietario;
-        this.idmaxpujador = idmaxpujador;
-        this.pujamaxima = pujamaxima;
-        this.abierto = abierto;
-        this.fechaapertura = fechaapertura;
-        this.fechacierre = fechacierre;
+    private int idProducto;
+    private String estado;
+    private int idPropietario;
+    private String imgUri;
+    private int precio;
+    private String titulo;
+
+    public Producto(int idProducto, String estado, int idPropietario, String imgUri, int precio, String titulo){
+        idProducto = idProducto;
+        estado = estado;
+        idPropietario = idPropietario;
+        imgUri = imgUri;
+        precio = precio;
+        titulo = titulo;
     }
 
-    public Producto(int idproducto, String nombre, String descripcion,String imagenuri, int propietario, int idmaxpujador, float pujamaxima, int abierto, long fechaapertura, long fechacierre) {
-        this.idproducto = idproducto;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.propietario = propietario;
-        this.idmaxpujador = idmaxpujador;
-        this.pujamaxima = pujamaxima;
-        this.abierto = abierto;
-        this.fechaapertura = fechaapertura;
-        this.fechacierre = fechacierre;
-        this.imagenuri = imagenuri;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public int getIdproducto() {
-        return idproducto;
+    public void setIdPropietario(int idPropietario) {
+        this.idPropietario = idPropietario;
     }
 
-    public void setIdproducto(int idproducto) {
-        this.idproducto = idproducto;
+    public void setImgUri(String imgUri) {
+        this.imgUri = imgUri;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public int getIdPropietario() {
+        return idPropietario;
     }
 
-    public int getPropietario() {
-        return propietario;
+    public String getImgUri() {
+        return imgUri;
     }
 
-    public void setPropietario(int propietario) {
-        this.propietario = propietario;
+    public int getPrecio() {
+        return precio;
     }
 
-    public int getIdmaxpujador() {
-        return idmaxpujador;
+    public String getTitulo() {
+        return titulo;
     }
-
-    public void setIdmaxpujador(int idmaxpujador) {
-        this.idmaxpujador = idmaxpujador;
-    }
-
-    public float getPujamaxima() {
-        return pujamaxima;
-    }
-
-    public void setPujamaxima(float pujamaxima) {
-        this.pujamaxima = pujamaxima;
-    }
-
-    public int getAbierto() {
-        return abierto;
-    }
-
-    public void setAbierto(int abierto) {
-        this.abierto = abierto;
-    }
-
-    public long getFechaapertura() {
-        return fechaapertura;
-    }
-
-    public void setFechaapertura(long fechaapertura) {
-        this.fechaapertura = fechaapertura;
-    }
-
-    public long getFechacierre() {
-        return fechacierre;
-    }
-
-    public void setFechacierre(long fechacierre) {
-        this.fechacierre = fechacierre;
-    }
-
-    public String getImagenuri() {return imagenuri;}
-
-    public void setImagenuri(String imagenuri) {this.imagenuri = imagenuri;}
 }

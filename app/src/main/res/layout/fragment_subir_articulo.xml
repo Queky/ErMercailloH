@@ -21,35 +21,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <!--
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Introduce los datos del articulo a subir:" />
-
-                <TextView
-                    android:text="-------------------------------------------------------------"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView9" />
+                -->
 
                 <ImageView
                     android:id="@+id/imagenArticulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <Button
-                    android:id="@+id/buttonSubirImg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="?attr/colorControlHighlight"
-                    android:elevation="10px"
-                    android:text="Subir una imagen" />
-
                 <TextView
-                    android:text="Nombre:"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView7" />
+                    android:text="  Nombre:" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -59,10 +46,9 @@
                     android:id="@+id/editNombreSA" />
 
                 <TextView
-                    android:text="Descripción:"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView8" />
+                    android:text="  Descripción:" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -72,38 +58,74 @@
                     android:id="@+id/editDesSA" />
 
                 <TextView
-                    android:text="Fecha cierre:"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView11" />
+                    android:text="  Precio:" />
 
-                <EditText
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/editFcierreSA" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/txtPrecio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.40"
+                        android:ems="10"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="€" />
+                </LinearLayout>
 
                 <TextView
-                    android:text="Hora Cierre:"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView6" />
+                    android:text="Fecha cierre:"
+                    android:visibility="gone" />
 
                 <EditText
+                    android:id="@+id/editFcierreSA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
                     android:ems="10"
-                    android:id="@+id/editHCierreSA" />
+                    android:inputType="textPersonName"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hora Cierre:"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/editHCierreSA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:visibility="gone" />
 
                 <Button
-                    android:text="¡ Subir Articulo !"
+                    android:id="@+id/buttonSubirImg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="?attr/colorControlHighlight"
+                    android:elevation="13dp"
+                    android:text="Saca o elige una foto" />
+
+                <Button
                     android:id="@+id/buttonSubirArt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="?attr/colorControlHighlight"
                     android:elevation="10px"
-                    android:backgroundTint="?attr/colorControlHighlight" />
+                    android:text="¡Subir Articulo!" />
 
             </LinearLayout>
         </LinearLayout>

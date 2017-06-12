@@ -15,6 +15,30 @@
       },
       "oauth_client": [
         {
+          "client_id": "200005194556-qvi19ridonvh451dhkvfi72d3agistl8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eneko.ermercailloh",
+            "certificate_hash": "b6dcbab7efa482e24d1b953da0d290951b309751"
+          }
+        },
+        {
+          "client_id": "200005194556-u0hs4jke9r3jsj7m0fr1kplh9nhhc8ff.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eneko.ermercailloh",
+            "certificate_hash": "455240c70c514b13543dc43bfd74666515aea5eb"
+          }
+        },
+        {
+          "client_id": "200005194556-n2fkhk8ff73ed6u7tajq8fu5an4p4qs9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eneko.ermercailloh",
+            "certificate_hash": "1a7d302804feda2547ef1bfcf1de6d0935a643d4"
+          }
+        },
+        {
           "client_id": "200005194556-4mq9j7tkl2m329tagudtoifqb9rjplik.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -44,6 +68,37 @@
               "client_type": 3
             }
           ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200005194556:android:1341afcc7deb013b",
+        "android_client_info": {
+          "package_name": "tech.alvarez.noticias"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200005194556-vba3g4l8c4hpnt0h9opb8jl88mldmsnm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJXRzX3rZn-cQ4g8552uk6c2-aodMFfKo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

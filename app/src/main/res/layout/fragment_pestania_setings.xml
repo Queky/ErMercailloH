@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,41 +8,124 @@
     <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/pagInfo1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Intoduce la direccion IP:" />
-
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:text="¿Que quieres buscar?" />
+
+        <EditText
+            android:id="@+id/editTextDireccionIP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:ems="10"
-            android:id="@+id/editTextDireccionIP" />
+            android:inputType="textPersonName" />
 
         <TextView
-            android:text="Introduce el puerto:"
+            android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView13" />
+            android:text="Rango de precio:" />
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editTextPuerto" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextPrecio1"
+                android:layout_width="147dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberSigned" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="€" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextPrecio2"
+                android:layout_width="147dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberSigned" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="€" />
+        </LinearLayout>
 
         <Button
-            android:text="Guardar"
+            android:id="@+id/buttonBuscar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonGuardar" />
+            android:text="Buscar" />
 
     </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/sV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:id="@+id/pagInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10px"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@android:drawable/btn_dialog"
+                    android:elevation="6dp" />
+
+                <TextView
+                    android:id="@+id/txtArticulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textPrecio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30px"
+                    android:layout_weight="1"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

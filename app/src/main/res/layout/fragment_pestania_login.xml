@@ -6,71 +6,81 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:text="Por favor introduce los siguientes datos para loguearte:"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="510dp"
-        android:id="@+id/infologin"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp"
+            android:text="Por favor introduce los siguientes datos para loguearte:"
+            android:gravity="center"/>
 
-        <TableRow
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp">
+            android:layout_marginTop="20dp"
+            android:layout_weight="1">
 
-            <TextView
-                android:text="Email:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/emailt"
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp">
 
-                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email:"
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:ems="10"
-                android:id="@+id/editTextemail" />
-        </TableRow>
+                    />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp">
+                <EditText
+                    android:id="@+id/editTextemail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textEmailAddress" />
+            </TableRow>
 
-            <TextView
-                android:text="Contraseña: "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/paswordt" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp">
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:id="@+id/editTextpaswword" />
-        </TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contraseña: " />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+                <EditText
+                    android:id="@+id/editTextpaswword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+            </TableRow>
 
-            <Button
-                android:text="aceptar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button"
-                style="@style/Widget.AppCompat.Button.Small"
-                android:elevation="14dp"
-                android:layout_marginLeft="15dp"/>
-        </TableRow>
-    </TableLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button"
+                    style="@style/Widget.AppCompat.Button.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:elevation="14dp"
+                    android:text="aceptar"
+                    android:gravity="center"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
 </FrameLayout>

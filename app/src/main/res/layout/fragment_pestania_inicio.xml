@@ -1,8 +1,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/PestanaInicio"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.eneko.ermercailloh.articulosUsuario">
+    tools:context="com.example.eneko.ermercailloh.pestaniaInicio">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
@@ -10,17 +11,12 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
+            android:id="@+id/PagIn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/LYN">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Listado de los articulos del Usuario:"
-                android:textAlignment="center" />
+            android:orientation="vertical">
 
         </LinearLayout>
     </ScrollView>
+
 </FrameLayout>
